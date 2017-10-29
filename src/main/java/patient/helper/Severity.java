@@ -1,5 +1,5 @@
 package patient.helper;
 
-public class Severity {
-
+public enum Severity {
+	HIGH, MEDIUM, LOW
 }
