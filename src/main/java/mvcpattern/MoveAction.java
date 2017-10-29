@@ -2,14 +2,14 @@ package mvcpattern;
 
 public class MoveAction {
 	
-	int PosX;
-	int PosY;
-	public void executeAction(int PosX, int PosY){
-		PosX = PosX + 10;
-		PosY = PosY + 30;
+	String moveAction;
+	public void executeAction(String moveAction){
+		System.out.println("Clicked");
+		this.moveAction = moveAction;
 	}
-	public int getAction(){
-		return PosX;
+	public String getAction(){
+		System.out.println(moveAction);
+		return moveAction;	
 	}
 
 }
