@@ -1,19 +1,27 @@
 package patient.helper;
 
+import java.util.Date;
 import java.util.List;
 
 public class Patient {
 	private String name;
+	private int age;
+	private Date lastSeen;
 	private List<Medication> medicationList;
 	private List<Allergy> allergyList;
 
-	// patient name getter and setter
-	public String getName() {
-		return name;
+	// patient name and last seen info
+	public Patient(String name, Date lastSeen) {
+		this.name = name;
+		this.lastSeen = lastSeen;
+	}
+	
+	public Date getLastSeenDate(){
+		return lastSeen;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLastSeenDate(Date lastSeen){
+		this.lastSeen = lastSeen;
 	}
 
 	// allergy associated with patient
@@ -29,13 +37,13 @@ public class Patient {
 		this.name = name;
 		this.allergyList = allergyList;
 	}
-	
-	public String getAllergyInfo(){
+
+	public String getAllergyInfo() {
 		StringBuffer stringBuffer = new StringBuffer();
-		stringBuffer.append("Patient Name is: "+this.getName()+"\n");
-		for(int i = 0; i < allergyList.size(); i++){
-			stringBuffer.append(" Allergy: "+this.getAllergy().get(i).getName());
-			stringBuffer.append(" with severity: "+this.getAllergy().get(i).getSeverity()+"\n");
+		stringBuffer.append("Patient Name is: " + this.getName() + "\n");
+		for (int i = 0; i < allergyList.size(); i++) {
+			stringBuffer.append(" Allergy: " + this.getAllergy().get(i).getName());
+			stringBuffer.append(" with severity: " + this.getAllergy().get(i).getSeverity() + "\n");
 		}
 		return stringBuffer.toString();
 	}
@@ -76,4 +84,13 @@ public class Patient {
 	// public void setMedicationList(List<Medication> medicationList) {
 	// this.medicationList = medicationList;
 	// }
+	
+	// patient name getter and setter
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 }
