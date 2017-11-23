@@ -4,6 +4,8 @@ public class HashTableEntry {
 	private int key;
 	private int value;
 	
+	HashTableEntry(){ }
+	
 	HashTableEntry(int key, int value){
 		this.key = key;
 		this.value = value;
